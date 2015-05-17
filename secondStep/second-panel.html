@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    {{substitutionMat}}
+    <div class="panel-heading">{{header}}</div>
+    <div class="panel-body">
+        <div class="container-overflow">
+            <table id="diagonals-table" class="table table-bordered table-condensed">
+                <thead>
+                    <tr class="success">
+                        <th> # </th>
+                        <th ng-repeat="value in baseSequence track by $index"> {{value}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(key,value) in querySequence track by $index">
+                        <td class="success"><b> {{value}} </b></td>
+                        <td ng-repeat="(key2,value2) in baseSequence track by $index" data-container="body"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button class="btn btn-danger" ui-sref="firstStep"> back </button>
+        <button class="btn btn-primary pull-right" ui-sref="thirdStep"> next </button>
+    </div>
+</div>

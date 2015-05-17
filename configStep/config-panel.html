@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{header}}
+    </div>
+    <div class="panel-body">
+        <div class="input-group">
+            <span class="input-group-addon"><b>base sequence</b></span>
+            <input type="text" class="form-control" ng-init="baseSequence" ng-model="baseSequence" name="baseSequence-input"/>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><b>query sequence</b></span>
+            <input type="text" class="form-control" ng-init="querySequence" ng-model="querySequence" name="querySequence-input"/>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon"><b>ktup</b></span>
+            <input type="number" name="ktup-input" min="2" max="6" ng-model="kTup"  class="form-control" ng-init="kTup"/>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button ng-click="save()" class="btn btn-primary pull-right" ui-sref="firstStep"> next</button> 
+    </div>
+</div>

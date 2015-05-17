@@ -1,0 +1,74 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{header}}</div>
+    <div class="panel-body">
+        <div class="container-overflow">
+
+            <!-- BASE SEQUENCE -->
+            <div>
+                <p id="baseSequence-p"> {{ baseSequence }} </p>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="success">
+                            <th ng-repeat="(key,value) in data.baseSequence"> {{key}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td ng-repeat="value in data.baseSequence">
+                                <p class="highlight-on-hover" ng-mouseover="highlightPartOfParagraph('baseSequence-p', baseSequence, element, kTup)" ng-mouseleave="highlightOff('baseSequence-p', baseSequence)" ng-repeat="element in value">{{element}}</p> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- BASE SEQUENCE -->
+
+            <!-- WANTED SEQUENCE -->
+            <div>
+                <p id="querySequence-p"> {{ querySequence }} </p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="info">
+                            <th ng-repeat="(key,value) in data.querySequence"> {{key}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td ng-repeat="value in data.querySequence">
+                                <p class="highlight-on-hover" ng-mouseover="highlightPartOfParagraph('querySequence-p', querySequence, element, kTup)" ng-mouseleave="highlightOff('querySequence', querySequence)" ng-repeat="element in value">{{element}}</p> </td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- WANTED SEQUENCE -->
+
+            <!-- HOT SPOTS -->
+            <div>
+                <p> HOT SPOTS </p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="warning">
+                            <th ng-repeat="(key,value) in data.hotSpots"> {{key}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td ng-repeat="value in data.hotSpots">
+                                <p ng-repeat="element in value">{{element}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- HOT SPOTS -->
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button class="btn btn-danger" ui-sref="configStep"> back </button>
+        <button class="btn btn-primary pull-right" ui-sref="secondStep"> next </button>
+    </div>
+</div>
